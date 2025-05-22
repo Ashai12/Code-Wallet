@@ -24,7 +24,7 @@ Développée avec **Electron** et **Vite + React**, Code Wallet fonctionne sous 
 
 ### 🔽 Télécharger l'application
 
-👉 [Télécharger la dernière version]([https://github.com/TON-NOM-UTILISATEUR/code-wallet/releases/latest](https://github.com/Ashai12/Code-Wallet/releases/tag/CodeWallet))
+👉 [Télécharger la dernière version](https://github.com/Ashai12/Code-Wallet/releases/tag/CodeWallet)
 
 ---
 
