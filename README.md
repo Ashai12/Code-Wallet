@@ -1,12 +1,35 @@
-# React + Vite
+# 💼 Code Wallet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Code Wallet** est une application de bureau simple et élégante pour stocker, organiser et réutiliser vos **fragments de code**. Elle vous permet de créer votre propre bibliothèque personnelle de snippets, classés par langage ou catégorie, pour une productivité maximale.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🖥️ Application de bureau multiplateforme
 
-## Expanding the ESLint configuration
+Développée avec **Electron** et **Vite + React**, Code Wallet fonctionne sous **Windows**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Fonctionnalités
+
+- 🧩 **Ajoutez des fragments de code** dans différents langages (JavaScript, Python, HTML, etc.)
+- 🏷️ **Catégorisez** vos snippets avec des tags ou dossiers personnalisés
+- 💾 **Sauvegarde locale** des données (aucune connexion requise)
+- 📋 **Copie rapide** dans le presse-papiers pour coller en un clic
+- 🎨 Interface intuitive 
+
+---
+
+## 🚀 Installation
+
+### 🔽 Télécharger l'application
+
+👉 [Télécharger la dernière version]([https://github.com/TON-NOM-UTILISATEUR/code-wallet/releases/latest](https://github.com/Ashai12/Code-Wallet/releases/tag/CodeWallet))
+
+---
+
+## 🛠️ Technologies utilisées
+
+- [Electron](https://www.electronjs.org/) – pour l'empaquetage de l'application
+- [React + Vite] (selon ton choix) – pour l’interface utilisateur
+- [Localstorage] – pour le stockage local
