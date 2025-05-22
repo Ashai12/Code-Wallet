@@ -31,5 +31,5 @@ Développée avec **Electron** et **Vite + React**, Code Wallet fonctionne sous 
 ## 🛠️ Technologies utilisées
 
 - [Electron](https://www.electronjs.org/) – pour l'empaquetage de l'application
-- [React + Vite] (selon ton choix) – pour l’interface utilisateur
-- [Localstorage] – pour le stockage local
+- [Vite + React]([https://www.electronjs.org/](https://vite.dev/guide/)) – pour l’interface utilisateur
+- [localStorage](https://developer.mozilla.org/fr/docs/Web/API/Window/localStorage) – pour le stockage local
