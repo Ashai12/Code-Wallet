@@ -4,7 +4,7 @@
 
 ---
 
-## 🖥️ Application de bureau multiplateforme
+## 🖥️ Application de bureau 
 
 Développée avec **Electron** et **Vite + React**, Code Wallet fonctionne sous **Windows**.
 
