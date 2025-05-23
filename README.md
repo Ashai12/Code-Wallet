@@ -26,6 +26,9 @@ Développée avec **Electron** et **Vite + React**, Code Wallet fonctionne sous 
 
 👉 [Télécharger la dernière version](https://github.com/Ashai12/Code-Wallet/releases/tag/CodeWallet)
 
+> **Note** : Si Windows vous affiche un avertissement de sécurité, cliquez sur **"Informations complémentaires" → "Exécuter quand même"**. J'ai créer cette application dans le cadre d'un projet d'école et n'est donc pas signé l'application, cet avertissement est donc normal.
+
+
 ---
 
 ## 🛠️ Technologies utilisées
