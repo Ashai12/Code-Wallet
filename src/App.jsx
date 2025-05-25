@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Link } from 'react-router-dom'; // J'importe HashRouter à la place de BrowserRouter que les changements de page soient présents dans l'app electron
 import Fragment from './pages/Fragment';
 import Tags from './pages/Tags';
 import Updates from './pages/Updates';
@@ -9,7 +8,6 @@ import './App.css';
 
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <Router>
@@ -27,7 +25,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} /> {/* Page d'accueil */}
         <Route path="/fragment" element={<Fragment />} />
         <Route path="/tags" element={<Tags />} />
         <Route path="/Updates" element={<Updates />} />

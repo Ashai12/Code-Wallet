@@ -24,28 +24,26 @@ export default function Tags() {
         const fragmentsArray = JSON.parse(storedFragments);
         setFragments(fragmentsArray);
 
-        // Récupère tous les tags uniques
         const allTags = Array.from(
           new Map(
             fragmentsArray
               .flatMap(fragment => fragment.tags)
               .map(tag => [tag.label, tag])
           ).values()
-        );
+        ); 
         setTags(allTags);
       } catch (e) {
         setTags([]);
         setFragments([]);
       }
     }
-  }, []);
+  }, []); // Récupère tous les tags uniques
 
-  // Filtrer les fragments par tag sélectionné
   const filteredFragments = selectedTag
     ? fragments.filter(fragment =>
         fragment.tags.some(tag => tag.label === selectedTag)
       )
-    : [];
+    : []; // Affichage des fragments selon le tag sélectionné
 
   return (
     <StyledTagDiv>

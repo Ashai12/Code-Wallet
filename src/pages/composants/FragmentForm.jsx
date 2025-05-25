@@ -49,8 +49,8 @@ export default function FragmentForm({ onFormSubmit }) {
     console.log("onFormSubmit reçu ?", typeof onFormSubmit);
   }, []);
 
-  const [alertVisible, setAlertVisible] = useState(false);
-  const [errorVisible, setErrorVisible] = useState(false); // Nouvel état
+  const [alertVisible, setAlertVisible] = useState(false); // Alerte de succès
+  const [errorVisible, setErrorVisible] = useState(false); // Alerte d'erreur
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,11 +64,11 @@ export default function FragmentForm({ onFormSubmit }) {
     e.preventDefault();
   
     if (!formData.title.trim() || !formData.tags.trim()) {
-      setErrorVisible(true);
+      setErrorVisible(true); // Si les champs sont vides, afficher l'alerte d'erreur
       return;
     }
   
-    const formattedTags = formData.tags.split(' ').map(tag => tag.trim()); // Convertir les tags en tableau
+    const formattedTags = formData.tags.split(' ').map(tag => tag.trim()); // Pour créer des tags il faut séparer deux mots par un espace (ex: "tag1 tag2" => ["tag1", "tag2"])
   
     if (onFormSubmit) {
       onFormSubmit({ ...formData, tags: formattedTags }); // Envoyer les tags sous forme de tableau

@@ -10,7 +10,7 @@ export default function Fragment() {
       try {
         const parsedFragments = JSON.parse(storedFragments);
         if (Array.isArray(parsedFragments)) {
-          return parsedFragments;
+          return parsedFragments; // affichage des fragments
         }
       } catch (error) {
         console.error("Erreur lors du parsing des fragments :", error);
@@ -22,7 +22,7 @@ export default function Fragment() {
   useEffect(() => {
     console.log("Sauvegarde dans localStorage :", fragments);
     localStorage.setItem('fragments', JSON.stringify(fragments));
-  }, [fragments]);
+  }, [fragments]); // ce useEffect agis comme un écouteur d'événement et met à jour le localStorage à chaque fois que le state "fragments" change
 
   const handleFormSubmit = (newFragment) => {
     console.log("Fragment reçu :", newFragment);
@@ -33,14 +33,14 @@ export default function Fragment() {
     }));
 
     const fragmentWithId = { ...newFragment, tags: tagsWithIds, id: uniqid() };
-    setFragments(prev => [...prev, fragmentWithId]);
+    setFragments(prev => [...prev, fragmentWithId]); // ajout du nouveau fragment
   };
 
   const handleDelete = (idToDelete) => {
     const updatedFragments = fragments.filter(frag => frag.id !== idToDelete);
     setFragments(updatedFragments);
     localStorage.setItem('fragments', JSON.stringify(updatedFragments));
-  };
+  }; // la supression d'un fragment prend en paramètre le uniqid du fragment à supprimer, puis filtre les fragments pour ne garder que ceux dont l'id ne correspond pas à celui à supprimer. Enfin, on met à jour le state et le localStorage.
 
   return (
     <>

@@ -10,7 +10,7 @@ import Alert from '@mui/material/Alert';
 import styled from 'styled-components';
 import CloseIcon from '@mui/icons-material/Close';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/vs.css'; // Thème Visual Studio
+import 'highlight.js/styles/vs.css';
 
 const StyledDialogTitleDiv = styled.div`
   display: flex;
@@ -41,32 +41,31 @@ export default function FragmentDialog({ open, handleClose, title, id }) {
       return localStorage.getItem(`fragment-${id}`) || '';
     }
     return '';
-  });
+  }); // Ouvre une zone de texte selon l'id du fragment, sinon vide 
+  
   const [highlightedHTML, setHighlightedHTML] = useState('');
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const [snackbarSeverity, setSnackbarSeverity] = useState('success');
 
-  // Recharge le texte à chaque ouverture du Dialog ou changement d'id
   useEffect(() => {
     if (open && id) {
       const savedText = localStorage.getItem(`fragment-${id}`) || '';
       setText(savedText);
     }
-  }, [open, id]);
+  }, [open, id]); // Recharge le texte à chaque ouverture du Dialog ou changement d'id
 
-  // Sauvegarde à chaque modification
   useEffect(() => {
     if (id) {
       localStorage.setItem(`fragment-${id}`, text);
     }
-  }, [text, id]);
+  }, [text, id]); // Sauvegarde à chaque modification
 
   useEffect(() => {
     setHighlightedHTML(hljs.highlightAuto(text).value);
-  }, [text]);
+  }, [text]); // coloration syntaxique du texte
 
-  const handleTextChange = (event) => setText(event.target.value);
+  const handleTextChange = (event) => setText(event.target.value); // met à jour l’état React pour que le texte change dans le composant
 
   const handleCopy = () => {
     if (!text.trim()) {
@@ -82,7 +81,7 @@ export default function FragmentDialog({ open, handleClose, title, id }) {
     }).catch((err) => {
       console.error('Erreur lors de la copie du texte :', err);
     });
-  };
+  }; // Fonction pour copier le texte dans le presse-papiers
 
   const handleSnackbarClose = (event, reason) => {
     if (reason === 'clickaway') return;

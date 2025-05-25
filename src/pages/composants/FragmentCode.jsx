@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // <-- Ajoute ceci
+import { useNavigate } from 'react-router-dom'; 
 import styled from 'styled-components';
 import Chip from '@mui/material/Chip';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -51,11 +51,9 @@ const StyledTitleSpan = styled.span`
   align-items: center;
 `;
 
-// Ajoute fragmentId dans les props !
 export default function FragmentCode({ fragmentId, title, tags, onDelete }) {
   const [openDialog, setOpenDialog] = useState(false);
-  const navigate = useNavigate(); // <-- Ajoute ceci
-
+  const navigate = useNavigate(); 
   const handleOpenDialog = () => {
     setOpenDialog(true);
   };
@@ -79,7 +77,7 @@ export default function FragmentCode({ fragmentId, title, tags, onDelete }) {
               key={tag.id}
               label={tag.label}
               clickable
-              onClick={() => navigate('/tags')} // <-- Redirige vers Tags.jsx
+              onClick={() => navigate('/tags')} // à chaque clic sur un tag (uniquement sur la page fragment), l'utilisateur est redirigé vers la page des tags
               variant="outlined"
               sx={{
                 backgroundColor: '#B288C0',
