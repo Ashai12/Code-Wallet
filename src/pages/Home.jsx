@@ -3,8 +3,8 @@ export default function Home() {
         <>
         <br /><br /><br /><br /><br /><br /><br /><br />
         <div className='text'>
-        <h2>Code Wallet – Une solution professionnelle pour la gestion de fragments de code.</h2>
-        <h3> Code Wallet est un outil gratuit conçu pour permettre aux développeurs de centraliser, organiser et réutiliser efficacement leurs fragments de code. En offrant une interface simple pour copier et coller du code dans les deux sens, l’outil vise à améliorer la productivité et la structuration des ressources techniques individuelles. Son modèle économique repose sur la revente de données techniques qualifiées et anonymisées à des entreprises du secteur IT, en particulier celles développant des solutions basées sur l’intelligence artificielle. Code Wallet allie simplicité d’usage et valorisation responsable des données.</h3>
+        <h2>Code Wallet – A professional solution for managing code snippets.</h2>
+        <h3> Code Wallet is a free tool designed to allow developers to centralize, organize, and efficiently reuse their code snippets. By providing a simple interface for copying and pasting code in both directions, the tool aims to improve productivity and the structuring of individual technical resources. Its business model is based on reselling qualified and anonymized technical data to companies in the IT sector, particularly those developing solutions based on artificial intelligence. Code Wallet combines ease of use with responsible data valuation.</h3>
         </div>
         <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </>
