@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import NewButton from "./composants/NewButton";
-import FragmentCode from './composants/FragmentCode';
-import uniqid from 'uniqid';
+import FragmentCode from "./composants/FragmentCode";
+import uniqid from "uniqid";
 
 export default function Fragment() {
   const [fragments, setFragments] = useState(() => {
-    const storedFragments = localStorage.getItem('fragments');
+    const storedFragments = localStorage.getItem("fragments");
     if (storedFragments) {
       try {
         const parsedFragments = JSON.parse(storedFragments);
@@ -21,41 +21,41 @@ export default function Fragment() {
 
   useEffect(() => {
     console.log("Sauvegarde dans localStorage :", fragments);
-    localStorage.setItem('fragments', JSON.stringify(fragments));
+    localStorage.setItem("fragments", JSON.stringify(fragments));
   }, [fragments]); // ce useEffect agis comme un écouteur d'événement et met à jour le localStorage à chaque fois que le state "fragments" change
 
   const handleFormSubmit = (newFragment) => {
     console.log("Fragment reçu :", newFragment);
 
-    const tagsWithIds = newFragment.tags.map(tag => ({
+    const tagsWithIds = newFragment.tags.map((tag) => ({
       id: uniqid(),
-      label: tag.trim()
+      label: tag.trim(),
     }));
 
     const fragmentWithId = { ...newFragment, tags: tagsWithIds, id: uniqid() };
-    setFragments(prev => [...prev, fragmentWithId]); // ajout du nouveau fragment
+    setFragments((prev) => [...prev, fragmentWithId]); // ajout du nouveau fragment
   };
 
   const handleDelete = (idToDelete) => {
-    const updatedFragments = fragments.filter(frag => frag.id !== idToDelete);
+    const updatedFragments = fragments.filter((frag) => frag.id !== idToDelete);
     setFragments(updatedFragments);
-    localStorage.setItem('fragments', JSON.stringify(updatedFragments));
+    localStorage.setItem("fragments", JSON.stringify(updatedFragments));
   }; // la supression d'un fragment prend en paramètre le uniqid du fragment à supprimer, puis filtre les fragments pour ne garder que ceux dont l'id ne correspond pas à celui à supprimer. Enfin, on met à jour le state et le localStorage.
 
   return (
-    <>
-      <br /><br /><br />
+  <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <div style={{ margin: "40px auto", width: "100%", maxWidth: 800 }}>
       <NewButton onFormSubmit={handleFormSubmit} />
-
       {fragments.map((fragment) => (
-  <FragmentCode
-    fragmentId={fragment.id}
-  title={fragment.title}
-  tags={fragment.tags}
-    onDelete={() => handleDelete(fragment.id)}
-  />
-))}
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </>
-  );
+        <FragmentCode
+          key={fragment.id}
+          fragmentId={fragment.id}
+          title={fragment.title}
+          tags={fragment.tags}
+          onDelete={() => handleDelete(fragment.id)}
+        />
+      ))}
+    </div>
+  </div>
+);
 }

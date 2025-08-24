@@ -20,17 +20,15 @@ const StyledUpdateText = styled.h3`
 `
 
 export default function Updates() {
-
   return (
-    <>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br />
-    <StyledUpdateDiv>
-    <StyledUpdateTitle>Updates</StyledUpdateTitle>
-    <br />
-    <StyledUpdateText>No news at the moment...</StyledUpdateText>
-    </StyledUpdateDiv>
-    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
+      <div style={{ flexGrow: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <StyledUpdateDiv>
+          <StyledUpdateTitle>Updates</StyledUpdateTitle>
+          <StyledUpdateText>No news at the moment...</StyledUpdateText>
+        </StyledUpdateDiv>
+      </div>
+    </div>
   );
 }
   

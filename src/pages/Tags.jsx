@@ -45,29 +45,31 @@ export default function Tags() {
       )
     : []; // Affichage des fragments selon le tag sélectionné
 
-  return (
-    <StyledTagDiv>
+  
+return (
+  <StyledTagDiv style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
     <StyledFragmentFormTitle>Tags</StyledFragmentFormTitle>
-      <div style={{ margin: '20px 0' }}>
-        {tags.length === 0 && <span>Aucun tag</span>}
-        {tags.map(tag => (
-          <Chip
-            key={tag.id}
-            label={tag.label}
-            clickable
-            color={selectedTag === tag.label ? "primary" : "default"}
-            onClick={() => setSelectedTag(selectedTag === tag.label ? null : tag.label)}
-            variant="outlined"
-            sx={{
-              backgroundColor: '#B288C0',
-              color: '#333333',
-              marginRight: '5px',
-              marginBottom: '5px'
-            }}
-          />
-        ))}
-      </div>
+    <div style={{ margin: '20px 0' }}>
+      {tags.length === 0 && <span>No tags</span>}
+      {tags.map(tag => (
+        <Chip
+          key={tag.id}
+          label={tag.label}
+          clickable
+          color={selectedTag === tag.label ? "primary" : "default"}
+          onClick={() => setSelectedTag(selectedTag === tag.label ? null : tag.label)}
+          variant="outlined"
+          sx={{
+            backgroundColor: '#B288C0',
+            color: '#333333',
+            marginRight: '5px',
+            marginBottom: '5px'
+          }}
+        />
+      ))}
+    </div>
 
+    <div style={{ flexGrow: 1 }}>
       {selectedTag && (
         <>
           {filteredFragments.length === 0 && <div>Aucun fragment trouvé.</div>}
@@ -84,7 +86,7 @@ export default function Tags() {
           </div>
         </>
       )}
-      <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-    </StyledTagDiv>
-  );
+    </div>
+  </StyledTagDiv>
+);
 }
